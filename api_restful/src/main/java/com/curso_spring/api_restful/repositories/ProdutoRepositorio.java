@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.curso_spring.api_restful.model.Produto;
+import com.curso_spring.api_restful.model.exceptions.ResourceNotFoundException;
 
 @Repository
 public class ProdutoRepositorio {
@@ -53,7 +54,9 @@ public class ProdutoRepositorio {
      * @return
      */
     public Produto atualizar(Produto produto) {
-        produtos.set(produtos.indexOf(produto), produto);
+        int indice = produtos.indexOf(produto);
+        if (indice == -1) throw new ResourceNotFoundException("Produto não encontrado");
+        produtos.set(indice, produto);
         return produto;
         // método do professor -> encontrar produto por id, deletar e depois salvar novamente com o mesmo id mas com
         // as novas informações
