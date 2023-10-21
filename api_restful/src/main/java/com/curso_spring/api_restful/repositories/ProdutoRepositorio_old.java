@@ -9,7 +9,7 @@ import com.curso_spring.api_restful.model.Produto;
 import com.curso_spring.api_restful.model.exceptions.ResourceNotFoundException;
 
 @Repository
-public class ProdutoRepositorio {
+public class ProdutoRepositorio_old {
 
     private List<Produto> produtos = new ArrayList<>();
     private Integer ultimoId = 0;
