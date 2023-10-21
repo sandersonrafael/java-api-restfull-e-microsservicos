@@ -29,7 +29,7 @@ public class ProdutoController {
 
     @GetMapping(value = "/{id}")
     public Produto obterPorId(@PathVariable Integer id) {
-        return servico.obterPorId(id);
+        return servico.obterPorId(id).get();
     }
 
     @PostMapping

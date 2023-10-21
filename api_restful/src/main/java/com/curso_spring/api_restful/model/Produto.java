@@ -1,12 +1,14 @@
 package com.curso_spring.api_restful.model;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Produto {
+public class Produto implements Serializable {
 
     //#region Atributos
     @Id
