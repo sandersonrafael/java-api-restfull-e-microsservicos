@@ -1,39 +1,24 @@
-package com.curso_spring.api_restful.model;
+package com.curso_spring.api_restful.view.model;
 
-import java.io.Serializable;
+public class ProdutoResponse {
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Produto implements Serializable {
-
-    //#region Atributos
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String nome;
     private Integer quantidade;
     private Double valor;
-    private String observacao;
-    //#endregion
+    // private String observacao;
 
-    //#region Construtores
-    public Produto() {
+    public ProdutoResponse() {
     }
 
-    public Produto(Integer id, String nome, Integer quantidade, Double valor, String observacao) {
+    public ProdutoResponse(Integer id, String nome, Integer quantidade, Double valor/* , String observacao */) {
         this.id = id;
         this.nome = nome;
         this.quantidade = quantidade;
         this.valor = valor;
-        this.observacao = observacao;
+        // this.observacao = observacao;
     }
-    //#endregion
 
-    //#region Getters Setters
     public Integer getId() {
         return id;
     }
@@ -66,16 +51,14 @@ public class Produto implements Serializable {
         this.valor = valor;
     }
 
-    public String getObservacao() {
-        return observacao;
-    }
+    // public String getObservacao() {
+    //     return observacao;
+    // }
 
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
-    }
-    //#endregion
+    // public void setObservacao(String observacao) {
+    //     this.observacao = observacao;
+    // }
 
-    //#region hashCode equals
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -92,7 +75,7 @@ public class Produto implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Produto other = (Produto) obj;
+        ProdutoResponse other = (ProdutoResponse) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
@@ -100,5 +83,4 @@ public class Produto implements Serializable {
             return false;
         return true;
     }
-    //#endregion
 }
